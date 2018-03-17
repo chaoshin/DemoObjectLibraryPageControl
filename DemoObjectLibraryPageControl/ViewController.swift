@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+
+    @IBOutlet weak var myImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func myPageControl(_ sender: UIPageControl) {
+        if sender.currentPage == 0 {    // 判斷使用者選到哪個Page
+            myImageView.image = UIImage(named: "Page1") //顯示對應的Image
+        }else if sender.currentPage == 1 {
+            myImageView.image = UIImage(named: "Page2")
+        }else {
+            myImageView.image = UIImage(named: "Page3")
+        }
+    }
+    
 }
 
